@@ -1,0 +1,26 @@
+{{ (title or 'Performance Qualification (PQ) Protocol') | string }}
+{{ title or default_title }}
+System: {{ system_name }}
+Company: {{ company }}
+Version: {{ version }}
+
+1. Purpose
+Describe the purpose of {{ system_name }}.
+
+2. Scope
+{{ scope }}
+
+3. Regulatory References
+{% for r in reg_refs %}- {{ r }}
+{% endfor %}
+
+4. Roles & Responsibilities
+{% for r in roles %}- {{ r }}
+{% endfor %}
+
+5. PQ Tests (sample)
+PQ-01: A sample client configuration produces a complete document set.
+PQ-02: Review cycle times reduced by >=50% vs manual drafting (sample study).
+
+6. Acceptance
+- All PQ tests pass; evidence attached.

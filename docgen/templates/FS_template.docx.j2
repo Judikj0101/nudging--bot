@@ -1,0 +1,27 @@
+{{ (title or 'Functional Specification (FS)') | string }}
+{{ title or default_title }}
+System: {{ system_name }}
+Company: {{ company }}
+Version: {{ version }}
+
+1. Purpose
+Describe the purpose of {{ system_name }}.
+
+2. Scope
+{{ scope }}
+
+3. Regulatory References
+{% for r in reg_refs %}- {{ r }}
+{% endfor %}
+
+4. Roles & Responsibilities
+{% for r in roles %}- {{ r }}
+{% endfor %}
+
+5. Functions
+FS-01: Template rendering with Jinja and export to DOCX/PDF.
+FS-02: Metadata capture (author, reviewer, approver, version).
+FS-03: Audit trail of document generation events.
+
+6. Acceptance Criteria
+- Each function traced to UR and verified by OQ tests.

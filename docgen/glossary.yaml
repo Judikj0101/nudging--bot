@@ -1,0 +1,15 @@
+company: Demo Pharma Kft.
+system_name: GxP Doc Assistant
+scope: >
+  A tool that generates, manages, and tracks GxP documents and validation
+  evidence for computerized systems used in regulated environments.
+reg_refs:
+  - EU GMP Annex 11
+  - 21 CFR Part 11
+  - GAMP 5
+roles:
+  - QA
+  - CSV
+  - IT
+  - Business Owner
+version: "0.1"

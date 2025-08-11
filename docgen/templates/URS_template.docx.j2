@@ -1,0 +1,27 @@
+{{ (title or 'User Requirements Specification (URS)') | string }}
+{{ title or default_title }}
+System: {{ system_name }}
+Company: {{ company }}
+Version: {{ version }}
+
+1. Purpose
+Describe the purpose of {{ system_name }}.
+
+2. Scope
+{{ scope }}
+
+3. Regulatory References
+{% for r in reg_refs %}- {{ r }}
+{% endfor %}
+
+4. Roles & Responsibilities
+{% for r in roles %}- {{ r }}
+{% endfor %}
+
+5. User Requirements
+UR-01: The system shall generate SOP drafts from standard templates.
+UR-02: The system shall maintain a traceability matrix linking UR→FS→DS→Tests.
+UR-03: The system shall support versioning and electronic signatures (Part 11 ready).
+
+6. Acceptance Criteria
+- Each UR mapped to FS/DS and verified by tests.

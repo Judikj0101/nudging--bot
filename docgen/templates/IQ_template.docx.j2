@@ -1,0 +1,30 @@
+{{ (title or 'Installation Qualification (IQ) Protocol') | string }}
+{{ title or default_title }}
+System: {{ system_name }}
+Company: {{ company }}
+Version: {{ version }}
+
+1. Purpose
+Describe the purpose of {{ system_name }}.
+
+2. Scope
+{{ scope }}
+
+3. Regulatory References
+{% for r in reg_refs %}- {{ r }}
+{% endfor %}
+
+4. Roles & Responsibilities
+{% for r in roles %}- {{ r }}
+{% endfor %}
+
+5. Prerequisites
+- GitHub repository with workflows configured.
+- OPENAI_API_KEY secret defined.
+
+6. IQ Tests (sample)
+IQ-01: Workflow `DocGen on PR` exists and runs successfully.
+IQ-02: Generated documents are saved to `docs/`.
+
+7. Acceptance
+- All IQ tests pass; evidence attached (workflow run links, artifacts).

@@ -1,0 +1,26 @@
+{{ (title or 'Operational Qualification (OQ) Protocol') | string }}
+{{ title or default_title }}
+System: {{ system_name }}
+Company: {{ company }}
+Version: {{ version }}
+
+1. Purpose
+Describe the purpose of {{ system_name }}.
+
+2. Scope
+{{ scope }}
+
+3. Regulatory References
+{% for r in reg_refs %}- {{ r }}
+{% endfor %}
+
+4. Roles & Responsibilities
+{% for r in roles %}- {{ r }}
+{% endfor %}
+
+5. OQ Tests (sample)
+OQ-01: Changing `glossary.yaml` updates generated documents.
+OQ-02: Adding `docgen` label triggers generation automatically.
+
+6. Acceptance
+- All OQ tests pass; evidence attached.

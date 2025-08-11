@@ -1,0 +1,31 @@
+{{ (title or 'Design Specification (DS)') | string }}
+{{ title or default_title }}
+System: {{ system_name }}
+Company: {{ company }}
+Version: {{ version }}
+
+1. Purpose
+Describe the purpose of {{ system_name }}.
+
+2. Scope
+{{ scope }}
+
+3. Regulatory References
+{% for r in reg_refs %}- {{ r }}
+{% endfor %}
+
+4. Roles & Responsibilities
+{% for r in roles %}- {{ r }}
+{% endfor %}
+
+5. Architecture
+- GitHub Actions orchestrate generation and checks.
+- Python components handle templating and summaries.
+
+6. Security & Data Integrity (ALCOA+)
+- Attribution via commit author, time-stamps in workflow logs.
+- Legible, contemporaneous records stored in repo.
+- Original records immutable via version control.
+
+7. Acceptance Criteria
+- DS aligns with FS; changes trigger impact assessment.

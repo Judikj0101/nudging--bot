@@ -1,0 +1,31 @@
+{{ (title or 'SOP: GxP Document Generation and Control') | string }}
+{{ title or default_title }}
+System: {{ system_name }}
+Company: {{ company }}
+Version: {{ version }}
+
+1. Purpose
+Describe the purpose of {{ system_name }}.
+
+2. Scope
+{{ scope }}
+
+3. Regulatory References
+{% for r in reg_refs %}- {{ r }}
+{% endfor %}
+
+4. Roles & Responsibilities
+{% for r in roles %}- {{ r }}
+{% endfor %}
+
+5. Procedure
+5.1 Trigger: Open a PR and add label `docgen`.
+5.2 System generates URS/FS/DS/IQ/OQ/PQ/SOP drafts to `docs/`.
+5.3 QA reviews drafts, updates glossary, and re-runs generator.
+5.4 Approved documents are versioned and released.
+
+6. Records
+- Generated DOCX files and workflow logs retained in the repository.
+
+7. Deviations & CAPA
+- Log deviations as GitHub issues; link to affected documents and commits.
